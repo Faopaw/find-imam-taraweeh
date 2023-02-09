@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 function vacancyCard() {
   return (
     <>
-      <Card border="light" bg='light' text='dark' style={{ width: "80%" , justifySelf: "center"}}>
+      <Card border="light" bg='light' text='dark' style={{ width: "80%" , "max-width" : "450px", justifySelf: "center"}}>
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
