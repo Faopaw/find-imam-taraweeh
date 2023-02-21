@@ -1,4 +1,3 @@
-import classes from "./VacancyCard.module.css";
 import Card from "react-bootstrap/Card";
 
 function vacancyCard(props) {
