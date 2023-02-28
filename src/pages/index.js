@@ -1,8 +1,8 @@
 import MainNavbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
-import Vacancies from "components/Vacancies";
+import Vacancies from "../../components/Vacancies";
 import "bootstrap/dist/css/bootstrap.min.css";
-import loadData from "components/loadData";
+import loadData from "../../components/loadData";
 
 export async function getStaticProps() {
   // const PERSONAL_ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN;
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 export default function Home({returnArray}) {
   return (
     <>
-      <MainNavbar />
+      {/* <MainNavbar /> */}
       <Hero />
       <Vacancies data={returnArray}/>
     </>

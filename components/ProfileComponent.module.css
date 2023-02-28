@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 1rem;
+  gap: 2rem;
+  justify-content: center;
+  /* justify-self: center; */
+  border: 1px solid salmon;
+  background-color: snow;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.imageandname {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.imagecontainer {
+  width: 150px;
+  height: 150px;
+}
+
+.listcontianer {
+  list-style: none;
+  font-size: 20px;
+  /* padding-left: 3rem; */
+}
+
+.listitem {
+  font-weight: 400;
+}
+
+.infotag {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 786px) {
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 1rem;
+  gap: 2rem;
+  align-items: center;
+  /* border: 1px solid salmon; */
+}
+
+
+  .imageandname {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: center;
+    width: 50%;
+    gap: 15px;
+  }
+
+  .listcontianer {
+    list-style: none;
+    font-size: 20px;
+    padding-left: 3rem;
+  }
+
+  .userdetails {
+    /* border: 1px solid salmon; */
+    width: 70%;
+  }
+}
