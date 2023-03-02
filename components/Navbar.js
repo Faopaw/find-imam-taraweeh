@@ -17,10 +17,17 @@ export default function MainNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Add Vacancy</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            {user
+           ? <Nav.Link href="/register">Add Vacancy</Nav.Link>
+           : <Nav.Link href="/api/auth/login">Add Vacancy</Nav.Link>
+           }
             <Nav.Link href="#link">FAQ</Nav.Link>
             <Nav.Link href="#link">Contact Me</Nav.Link>
+            {user
+           ? <Nav.Link href="/profile">Profile</Nav.Link>
+           : <></>
+           }
            {user
            ? <Nav.Link href="/api/auth/logout">Log out</Nav.Link>
            : <Nav.Link href="/api/auth/login">Log in</Nav.Link>
