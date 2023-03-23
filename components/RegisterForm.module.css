@@ -2,9 +2,11 @@
     max-width: 80%;
     /* display: flex;
     flex-flow: column nowrap; */
-    border: 2px solid salmon;
-    padding: 1rem;
+    /* border: 2px solid salmon; */
+    padding: 2rem;
     background-color: white;
+    margin: 4rem auto;
+    border-radius: 20px;
 }
 
 
