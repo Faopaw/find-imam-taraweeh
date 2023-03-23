@@ -5,10 +5,13 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding-top: 3rem;
+    padding-bottom: 3rem;
     gap:2rem;
     font-family: 'Poppins', sans-serif;
-    color: black;
+    color: white;
+    background-color: #110658;
 }
 
 .h1 {
@@ -20,4 +23,15 @@
     font-size: clamp(1.1875rem, 0.9643rem + 0.7143vw, 1.5rem);
     text-align: center;
     max-width: 80%;
+}
+
+@media only screen and (min-width :1000px){
+    .container {
+        align-items: flex-start;
+        padding-left: 10%;
+        /* text-align: left; */
+    }
+    .h4 {
+        text-align: left;
+    }
 }
