@@ -8,7 +8,7 @@ export default async function loadData() {
   await client
     .getSpace(process.env.CONTENTFUL_SPACE_ID)
     .then((space) => space.getEnvironment("master"))
-    .then((environment) => environment.getEntries())
+    .then((environment) => environment.getPublishedEntries())
     .then((response) => {
       returnArray = response.items;
     })
