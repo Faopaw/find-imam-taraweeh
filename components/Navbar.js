@@ -21,7 +21,7 @@ export default function MainNavbar() {
            ? <Nav.Link href="/register">Add Vacancy</Nav.Link>
            : <Nav.Link href="/api/auth/login">Add Vacancy</Nav.Link>
            }
-            <Nav.Link href="#link">Contact Me</Nav.Link>
+            <Nav.Link href="#link">Contact Us</Nav.Link>
             {user
            ? <Nav.Link href="/profile">Profile</Nav.Link>
            : <></>
