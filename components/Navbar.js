@@ -31,13 +31,6 @@ export default function MainNavbar() {
            : <Nav.Link href="/api/auth/login">Log in</Nav.Link>
            }
           </Nav>
-          {/* <Image
-              src={user.picture}
-              alt={user.name}
-              style={style}
-              width={50}
-              height={50}
-            /> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
