@@ -66,7 +66,7 @@ export default function RegisterForm() {
         exit={{ opacity: 0 }}
       >
         <Head>
-          <title>Find Imam App</title>
+          <title>Find Imam App - Register Vacancy</title>
           <meta
             name="description"
             content="Find an Imam to lead taraweeh salah"

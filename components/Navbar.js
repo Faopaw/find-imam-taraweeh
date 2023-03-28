@@ -13,11 +13,11 @@ export default function MainNavbar() {
   return (
     <Navbar bg="dark" variant="dark"  expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Find an Imam</Navbar.Brand>
+        <Navbar.Brand href="/">Find an Imam</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            {/* <Nav.Link href="/">Home</Nav.Link> */}
             {user
            ? <Nav.Link href="/register">Add Vacancy</Nav.Link>
            : <Nav.Link href="/api/auth/login">Add Vacancy</Nav.Link>

@@ -9,8 +9,8 @@
   gap: 2rem;
   justify-content: center;
   /* justify-self: center; */
-  border: 1px solid salmon;
-  background-color: snow;
+  /* border: 1px solid salmon; */
+  background-color: rgb(255, 255, 255);
   font-family: 'Open Sans', sans-serif;
 
 }
@@ -37,6 +37,23 @@
 
 .listitem {
   font-weight: 400;
+  padding: 1.3rem;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  margin: 2rem auto;
+  font-size: larger;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.listitemtext {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .infotag {
@@ -63,6 +80,10 @@
     align-self: center;
     width: 50%;
     gap: 15px;
+  }
+
+  .imageandname h2 {
+    padding-left: 2rem;
   }
 
   .listcontianer {
