@@ -49,11 +49,16 @@ function vacancyCard(props) {
           <Modal.Title>More Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Masjid Name: {props.requireddata.fields.masjid["en-US"]}
+        
+        <strong>Masjid Name:</strong> {props.requireddata.fields.masjid["en-US"]}
           <br></br>
           <br></br>
 
-          Extra Details: {props.requireddata.fields.extraDetails["en-US"]}
+          <strong>Address:</strong> {props.requireddata.fields.address["en-US"]}
+          <br></br>
+          <br></br>
+
+          <strong>Extra Details:</strong> {props.requireddata.fields.extraDetails["en-US"]}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleClose}>
