@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function vacancyCard(props) {
+function VacancyCard(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -35,7 +35,7 @@ function vacancyCard(props) {
             {props.requireddata.fields.contactName["en-US"]} -{" "}
             {props.requireddata.fields.contactMobileNumber["en-US"]}
           </Card.Text>
-          <Button variant="primary" onClick={handleShow}>
+          <Button aria-label="detailsbutton" variant="primary" onClick={handleShow}>
             More Details
           </Button>
         </Card.Body>
@@ -70,4 +70,4 @@ function vacancyCard(props) {
   );
 }
 
-export default vacancyCard;
+export default VacancyCard;
