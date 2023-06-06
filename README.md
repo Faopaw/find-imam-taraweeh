@@ -1,3 +1,31 @@
+
+# Find Imam Taraweeh
+
+A Job board - like app for Imam vacancies especially for Taraweeh
+
+
+## Authors
+
+- [@Faopaw](https://github.com/Faopaw)
+
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at idirisomer@gmail.com
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
