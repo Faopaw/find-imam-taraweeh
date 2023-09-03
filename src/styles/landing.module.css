@@ -1,71 +1,256 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap");
 
 .main {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    margin-top: 3rem;
-    background-color: white;
-    color: black;
-    font-family: 'Open Sans', sans-serif;
-    
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: 3rem;
+  background-color: white;
+  color: black;
+  font-family: "Open Sans", sans-serif;
 }
 
 .herotext {
-    color: rgb(27, 27, 27);
-    text-align: center;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    gap: 1rem;
-    max-width: 80%;
+  color: rgb(27, 27, 27);
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  max-width: 80%;
 }
 
 .h1 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .buttoncontianer {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
 }
 
 .imagecontianer {
-    display: none;
+  display: none;
 }
 
-@media  screen and  (min-width: 786px) {
-    .main {
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        width: 100%;
-        height: 100vh;
-        margin-top: 1rem;
-        background-color: white;
-        color: black;
-        font-family: 'Open Sans', sans-serif;
-        
-    }
-
-    .herotext {
-        color: rgb(27, 27, 27);
-        text-align: left;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: start;
-        gap: 1rem;
-        max-width: 80%;
-        margin-left: 2rem;
-    }
-
-    .imagecontianer {
-        display: block;
-        margin: 1rem;
-    }
+.features {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
 }
 
+.mainfeatures {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 70%;
+  margin-bottom: 5rem;
+}
+
+.benefits {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 70%;
+  margin-bottom: 5rem;
+}
+
+.singlebenefit {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.singlebenefit p {
+  max-width: 100%;
+}
+
+.socialproof {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.statements {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 75%;
+  margin-bottom: 5rem;
+}
+
+.statements > div {
+    /* border: 1px solid grey; */
+    border-radius: 5%;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 0px 10px 20px -3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.finalcta {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.quotepic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: brown;
+    border: 1px solid salmon;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 786px) {
+  .main {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 1rem;
+    background-color: white;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .herotext {
+    color: rgb(27, 27, 27);
+    text-align: left;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    gap: 1rem;
+    max-width: 50%;
+    margin-left: 2rem;
+  }
+
+  .imagecontianer {
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 1rem;
+    width: 700px;
+    height: 500px;
+    margin-right: none;
+    position: relative;
+    /* object-fit: fill; */
+  }
+
+  .features {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainfeatures {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    text-align: left;
+    max-width: 70%;
+    margin-bottom: 5rem;
+  }
+
+  .mainfeatures > div {
+    
+  }
+
+  .benefits {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 70%;
+    margin-bottom: 5rem;
+  }
+
+  .benefitimage {
+    min-width: 300px;
+    min-height: 300px;
+    border: 1px solid green;
+    background-color: aquamarine;
+  }
+
+  .singlebenefit {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .singlebenefit p {
+    max-width: 70%;
+  }
+
+  .socialproof {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .statements {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    max-width: 80%;
+    margin-bottom: 5rem;
+  }
+
+  .statements > div {
+    /* border: 1px solid grey; */
+    border-radius: 5%;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 0px 10px 20px -3px rgba(0,0,0,0.1);
+    width: 300px;
+    min-width: 270px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: start;
+    text-align: left;
+}
+}

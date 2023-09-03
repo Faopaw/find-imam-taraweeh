@@ -3,6 +3,8 @@ import Hero from "../../components/Hero";
 import Vacancies from "../../components/Vacancies";
 import "bootstrap/dist/css/bootstrap.min.css";
 import loadData from "../../components/loadData";
+<script src="https://kit.fontawesome.com/3f9fcc8d29.js" crossorigin="anonymous"></script>
+
 
 
 
@@ -20,6 +22,7 @@ export async function getStaticProps() {
   };
 
 export default function Home({returnArray}) {
+  // <script src="https://kit.fontawesome.com/3f9fcc8d29.js" crossorigin="anonymous"></script>
 
   return (
     <>
