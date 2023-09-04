@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 .main {
   display: flex;
@@ -43,17 +43,23 @@
   height: auto;
   justify-content: center;
   align-items: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 .mainfeatures {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
   max-width: 70%;
   margin-bottom: 5rem;
+  row-gap: 3rem;
 }
+
+/* .mainfeatures > div {
+
+} */
 
 .benefits {
   display: flex;
@@ -83,6 +89,7 @@
   height: auto;
   justify-content: center;
   align-items: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 .statements {
@@ -116,6 +123,7 @@
     text-align: center;
     gap: 2rem;
     margin-bottom: 3rem;
+    font-family: "Open Sans", sans-serif;
 }
 
 .quotepic{
@@ -177,17 +185,18 @@
 
   .mainfeatures {
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
+    align-items: start;
+    justify-content: center;
     gap: 1rem;
     text-align: left;
-    max-width: 70%;
+    max-width: 80%;
     margin-bottom: 5rem;
   }
 
   .mainfeatures > div {
-    
+    min-width: 300px;
+    width: 320px;
   }
 
   .benefits {
