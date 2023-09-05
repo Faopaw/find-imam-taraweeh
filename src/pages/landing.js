@@ -5,6 +5,8 @@ import MainNavbar from "../../components/Navbar";
 import Image from "next/image";
 import classes from "../styles/landing.module.css";
 import heroImage from "../../public/heroimage.jpg";
+import searchImage from "../../public/undraw_the_search_s0xf.svg";
+import problemsoveImage from "../../public/undraw_problem_solving_re_4gq3.svg";
 // import { IconName } from "react-icons/fa6";
 import { FaTreeCity } from "react-icons/fa6";
 import { FaHandshakeSimple } from "react-icons/fa6";
@@ -91,34 +93,45 @@ export default function Landing() {
             {/* Some benefits with Images */}
             <div className={classes.singlebenefit}>
               <div>
-                <h2 className={classes.subheading}>Some benefit #1</h2>
+                <h3 className={classes.subheading}>
+                  Quickly Find what you need
+                </h3>
                 <p className={classes.benefittext}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas volutpat sem ut neque malesuada, a commodo odio
-                  faucibus. Curabitur id enim fermentum, lobortis sem eu, congue
-                  metus. Donec consequat risus id erat ultricies congue. Aenean
-                  ac orci non orci tempor finibus ut id orci. Aliquam id magna
-                  libero. Nunc at.
+                  WIth our platform serving around 3 million muslims with over
+                  1200 mosques, you are sure to find what you are looking for.
+                  FIT provides you with the tools to find an Imam and the
+                  channels to communicate efficiently.
                 </p>
               </div>
               <div className={classes.benefitimage}>
-                <Image></Image>
+                <Image
+                  alt="Image of a person looking for something on a giant mobile phone with a magnifying glass"
+                  src={searchImage}
+                  fill
+                  priority
+                ></Image>
               </div>
             </div>
             <div className={classes.singlebenefit}>
               <div>
-                <h2 className={classes.subheading}>Some benefit #2</h2>
+                <h3 className={classes.subheading}>
+                  Modern Problem, Modern Solution
+                </h3>
                 <p className={classes.benefittext}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas volutpat sem ut neque malesuada, a commodo odio
-                  faucibus. Curabitur id enim fermentum, lobortis sem eu, congue
-                  metus. Donec consequat risus id erat ultricies congue. Aenean
-                  ac orci non orci tempor finibus ut id orci. Aliquam id magna
-                  libero. Nunc at.
+                  Ordinarilly people would try to solve this problem via word of
+                  mouth or circulating whattsapp messages. That method is
+                  frankly outdated and limited. You can only be contacted by
+                  those who recieve the message while you are completely unaware
+                  of them. We aim to solve that problem once and for all.
                 </p>
               </div>
               <div className={classes.benefitimage}>
-                <Image></Image>
+                <Image
+                  alt="Image of somebody solving a problem"
+                  src={problemsoveImage}
+                  fill
+                  priority
+                ></Image>
               </div>
             </div>
           </div>
@@ -127,7 +140,7 @@ export default function Landing() {
           {/* Some social proof - testimonials etc */}
           <div className={classes.statements}>
             <div>
-              <h3 className={classes.subheading}>Social proof #1</h3>
+              {/* <h3 className={classes.subheading}>Social proof #1</h3> */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 justo risus, malesuada sed ligula non, porta ullamcorper diam.
@@ -140,7 +153,7 @@ export default function Landing() {
               <h6>CEO - Amazon</h6>
             </div>
             <div>
-              <h3 className={classes.subheading}>Social proof #2</h3>
+              {/* <h3 className={classes.subheading}>Social proof #2</h3> */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 justo risus, malesuada sed ligula non, porta ullamcorper diam.
@@ -152,7 +165,7 @@ export default function Landing() {
               <h6>CEO - Amazon</h6>
             </div>
             <div>
-              <h3 className={classes.subheading}>Social proof #3</h3>
+              {/* <h3 className={classes.subheading}>Social proof #3</h3> */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 justo risus, malesuada sed ligula non, porta ullamcorper diam.

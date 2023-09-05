@@ -82,6 +82,10 @@
   max-width: 100%;
 }
 
+.benefitimage {
+  display: none;
+}
+
 .socialproof {
   display: flex;
   flex-flow: column nowrap;
@@ -210,10 +214,12 @@
   }
 
   .benefitimage {
+    display: block;
+    position: relative;
     min-width: 300px;
     min-height: 300px;
-    border: 1px solid green;
-    background-color: aquamarine;
+    /* border: 1px solid green; */
+    /* background-color: aquamarine; */
   }
 
   .singlebenefit {
