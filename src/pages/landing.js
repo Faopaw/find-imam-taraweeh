@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import MainNavbar from "../../components/Navbar";
 import Image from "next/image";
 import classes from "../styles/landing.module.css";
-import heroImage from "../../public/heroimage.jpg";
+import heroImage from "../../public/muslimhero.jpg";
 import searchImage from "../../public/undraw_the_search_s0xf.svg";
 import problemsoveImage from "../../public/undraw_problem_solving_re_4gq3.svg";
 // import { IconName } from "react-icons/fa6";
@@ -30,7 +30,6 @@ export default function Landing() {
             <h1 className={[classes.h1, classes.largeheading]}>
               No Imam to lead prayers? No Problem.
             </h1>
-            {/* TODO - might need to wrap the above h1 */}
             <p className={classes.p}>
               FIT Provides a modern solution to the problem of finding an
               appropriate candidate to have the honour of leading prayers. FIT
@@ -48,6 +47,7 @@ export default function Landing() {
             <Image
               alt="Image of a mosque carpet with a quran on a wooden desk in the center of the image"
               src={heroImage}
+              style={{ objectFit: "cover" }}
               fill
               priority
             ></Image>
@@ -66,7 +66,6 @@ export default function Landing() {
                 provide coverage for the muslim communities throughout the
                 nation.
               </p1>
-              {/* TODO - a little display image could go here of the quote author */}
             </div>
             <div>
               <h5 className={classes.subheading}>
@@ -109,7 +108,7 @@ export default function Landing() {
                   src={searchImage}
                   fill
                   priority
-                ></Image>
+                />
               </div>
             </div>
             <div className={classes.singlebenefit}>

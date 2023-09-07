@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 .main {
   display: flex;
@@ -57,10 +57,6 @@
   row-gap: 3rem;
 }
 
-/* .mainfeatures > div {
-
-} */
-
 .benefits {
   display: flex;
   flex-flow: column nowrap;
@@ -107,44 +103,45 @@
 }
 
 .statements > div {
-    /* border: 1px solid grey; */
-    border-radius: 5%;
-    padding: 2rem;
-    margin: 2rem;
-    box-shadow: 0px 10px 20px -3px rgba(0,0,0,0.1);
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  border-radius: 5%;
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 0px 10px 20px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .finalcta {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  font-family: "Open Sans", sans-serif;
 }
 
-.quotepic{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: brown;
-    border: 1px solid salmon;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.quotepic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: brown;
+  border: 1px solid salmon;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .main {
     display: flex;
-    flex-flow: row;
+    flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 100%;
     height: 100vh;
     margin-top: 1rem;
@@ -155,27 +152,14 @@
 
   .herotext {
     color: rgb(27, 27, 27);
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-flow: column nowrap;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     max-width: 50%;
     margin-left: 2rem;
-  }
-
-  .imagecontianer {
-    /* display: block; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 1rem;
-    width: 700px;
-    height: 500px;
-    margin-right: none;
-    position: relative;
-    /* object-fit: fill; */
   }
 
   .features {
@@ -195,7 +179,7 @@
     gap: 1rem;
     text-align: left;
     max-width: 80%;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
   }
 
   .mainfeatures > div {
@@ -210,6 +194,7 @@
     justify-content: center;
     text-align: center;
     max-width: 70%;
+    margin-top: 2rem;
     margin-bottom: 5rem;
   }
 
@@ -218,8 +203,6 @@
     position: relative;
     min-width: 300px;
     min-height: 300px;
-    /* border: 1px solid green; */
-    /* background-color: aquamarine; */
   }
 
   .singlebenefit {
@@ -228,7 +211,7 @@
     align-items: center;
     justify-content: center;
     text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
 
   .singlebenefit p {
@@ -255,11 +238,10 @@
   }
 
   .statements > div {
-    /* border: 1px solid grey; */
     border-radius: 5%;
     padding: 2rem;
     margin: 1rem;
-    box-shadow: 0px 10px 20px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 20px -3px rgba(0, 0, 0, 0.1);
     width: 300px;
     min-width: 270px;
     display: flex;
@@ -267,5 +249,42 @@
     align-items: start;
     justify-content: start;
     text-align: left;
+  }
 }
+
+@media screen and (min-width: 1220px) {
+  .main {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 1rem;
+    background-color: white;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .herotext {
+    color: rgb(27, 27, 27);
+    text-align: left;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    gap: 1rem;
+    max-width: 50%;
+    margin-left: 2rem;
+  }
+
+  .imagecontianer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 1rem;
+    width: 700px;
+    height: 400px;
+    margin-right: none;
+    position: relative;
+  }
 }
