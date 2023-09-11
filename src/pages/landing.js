@@ -1,19 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
-import MainNavbar from "../../components/Navbar";
 import Image from "next/image";
 import classes from "../styles/landing.module.css";
 import heroImage from "../../public/muslimhero.jpg";
 import searchImage from "../../public/undraw_the_search_s0xf.svg";
 import problemsoveImage from "../../public/undraw_problem_solving_re_4gq3.svg";
-// import { IconName } from "react-icons/fa6";
 import { FaTreeCity } from "react-icons/fa6";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa6";
 import { IconContext } from "react-icons";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faFaceRelieved } from '@fortawesome/pro-solid-svg-icons'
 
 export default function Landing() {
   return (
