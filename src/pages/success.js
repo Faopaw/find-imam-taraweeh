@@ -37,7 +37,7 @@ export default function Success() {
           Your details have been submitted and will be processed by our approval
           team.
         </p>
-        <Button size="lg" variant="primary" href="/">Go to Homepage</Button>
+        <Button size="lg" variant="primary" href="/" className={classes.buttonstyle}>Go to Homepage</Button>
       </div>
       <Confetti
         width={width}
