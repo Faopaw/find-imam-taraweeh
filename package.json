@@ -13,6 +13,7 @@
     "@auth0/nextjs-auth0": "^2.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.1.6",
+    "@react-google-maps/api": "^2.19.2",
     "@react-hook/window-size": "^3.1.1",
     "bootstrap": "^5.2.3",
     "contentful": "^9.3.0",
