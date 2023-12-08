@@ -34,7 +34,7 @@ export default function Landing() {
             </p>
             <div className={classes.buttoncontianer}>
               <Button variant="info" href="/register">
-                Find an Imam
+                Get Started !
               </Button>
               <Button variant="warning">About Us</Button>
             </div>

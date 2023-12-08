@@ -6,10 +6,10 @@ import { GoVerified } from "react-icons/go";
 
 export default function ProfileComponent(props) {
   const style = {
-    width: "150px",
-    height: "150px",
+    width: "160px",
+    height: "160px",
     border: "3px solid #0006b0",
-    borderRadius: "50%",
+    borderRadius: "50%"
   };
 
   return (
@@ -25,7 +25,7 @@ export default function ProfileComponent(props) {
               height={150}
             />
           </div>
-          <h2 className={classes.username}>{props.data.email}</h2>
+          <h2 className={classes.username}>{props.data.name}</h2>
         </div>
         <div className={classes.userdetails}>
           <ul className={classes.listcontianer}>
@@ -64,13 +64,13 @@ export default function ProfileComponent(props) {
                 {props.data.locale}
               </div>
             </li>
-            <li className={classes.listitem}>
+            {/* <li className={classes.listitem}>
               <FaGlobe />
               <div className={classes.listitemtext}>
                 <span className={classes.infotag}> Last Updated: </span>
                 {props.data.updated_at}
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </section>
