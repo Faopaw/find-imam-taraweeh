@@ -8,10 +8,13 @@ export default async function Home() {
   // In Pages Router, getStaticProps double-stringified the data
   // To maintain compatibility with Vacancies component, we need to stringify once more
   const returnArray = JSON.stringify(res);
-  
+
   return (
     <>
-      <Hero />
+      <Hero
+        title="All Vacancies"
+        description="Use the information below to see all of the current Taraweeh vacancies nationwide"
+      />
       <Vacancies data={returnArray} />
       <Footer />
     </>

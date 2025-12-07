@@ -30,7 +30,6 @@ import { cn } from "@/lib/utils";
 
 export default function MainNavbar() {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
-  const [showFAQ, setShowFAQ] = useState<boolean>(false);
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -65,13 +64,11 @@ export default function MainNavbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Button
-                variant="ghost"
-                onClick={() => setShowFAQ(true)}
-                className={cn(navigationMenuTriggerStyle(), "h-9")}
-              >
-                FAQ
-              </Button>
+              <Link href="/faq" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  FAQ
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -121,53 +118,6 @@ export default function MainNavbar() {
         </Sheet>
       </div>
 
-      {/* FAQ Dialog */}
-      <Dialog open={showFAQ} onOpenChange={setShowFAQ}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>FAQ</DialogTitle>
-            <DialogDescription>Frequently asked questions</DialogDescription>
-          </DialogHeader>
-          <div className="mt-1">
-            <div>
-              <h6 className="text-base font-semibold mb-2">
-                Do I have to sign up to register a vacancy?
-              </h6>
-              <p className="text-sm text-muted-foreground">
-                No, you may register a vacancy by simply filling out the
-                registration form. Signing up is optional.
-              </p>
-            </div>
-            <div>
-              <h6 className="text-base font-semibold mb-2">
-                I registered a vacancy, why is it not appearing on the homepage?
-              </h6>
-              <p className="text-sm text-muted-foreground">
-                Once you have submitted a vacancy it will be processed by the
-                team. Once approved it will appear on the home page of the app.
-              </p>
-            </div>
-            <div>
-              <h6 className="text-base font-semibold mb-2">
-                I registered a vacancy, why is it not appearing on the homepage?
-              </h6>
-              <p className="text-sm text-muted-foreground">
-                Once you have submitted a vacancy it will be processed by the
-                team. Once approved it will appear on the home page of the app.
-              </p>
-            </div>
-            <div>
-              <h6 className="text-base font-semibold mb-2">
-                How do I edit or delete a vacancy?
-              </h6>
-              <p className="text-sm text-muted-foreground">
-                You can edit or delete a vacancy by contacting the team via{" "}
-                <a href="mailto:contact@gmail.com"> email</a>
-              </p>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </nav>
   );
 }
