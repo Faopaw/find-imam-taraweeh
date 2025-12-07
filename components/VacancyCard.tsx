@@ -33,22 +33,22 @@ function VacancyCard(props: VacancyCardProps) {
             {props.requireddata.fields.city['en-US']}
           </CardTitle>
           <CardDescription>
-            {props.requireddata.fields.address['en-US']}
+            {props.requireddata.fields.address?.['en-US']}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className='space-y-4'>
             <span className='text-sm text-muted-foreground'>
-              {props.requireddata.fields.requirements['en-US']}
+              {props.requireddata.fields.requirements?.['en-US']}
             </span>
 
             <div className='flex items-center gap-2 text-sm'>
               <span className='font-medium'>
-                {props.requireddata.fields.contactName['en-US']}
+                {props.requireddata.fields.contactName?.['en-US']}
               </span>
               <span className='text-muted-foreground'>-</span>
               <span className='text-muted-foreground'>
-                {props.requireddata.fields.contactMobileNumber['en-US']}
+                {props.requireddata.fields.contactMobileNumber?.['en-US']}
               </span>
             </div>
           </div>
@@ -77,19 +77,19 @@ function VacancyCard(props: VacancyCardProps) {
             <div>
               <strong className='text-sm font-semibold'>Masjid Name:</strong>
               <p className='text-sm text-muted-foreground mt-1'>
-                {props.requireddata.fields.masjid['en-US']}
+                {props.requireddata.fields.masjid?.['en-US']}
               </p>
             </div>
             <div>
               <strong className='text-sm font-semibold'>Address:</strong>
               <p className='text-sm text-muted-foreground mt-1'>
-                {props.requireddata.fields.address['en-US']}
+                {props.requireddata.fields.address?.['en-US']}
               </p>
             </div>
             <div>
               <strong className='text-sm font-semibold'>Extra Details:</strong>
               <p className='text-sm text-muted-foreground mt-1'>
-                {props.requireddata.fields.extraDetails['en-US']}
+                {props.requireddata.fields.extraDetails?.['en-US']}
               </p>
             </div>
           </div>
