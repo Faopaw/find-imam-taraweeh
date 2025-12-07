@@ -1,4 +1,3 @@
-import React from "react";
 import VacancyForm from "../../components/VacancyForm";
 import { Metadata } from "next";
 

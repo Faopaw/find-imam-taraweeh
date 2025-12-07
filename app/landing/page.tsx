@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Button } from "react-bootstrap";
 import Image from "next/image";
 import heroImage from "../../public/muslimhero.jpg";

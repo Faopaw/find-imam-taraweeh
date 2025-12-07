@@ -1,5 +1,4 @@
 import * as contentfulManagement from 'contentful-management';
-import { ContentfulResponse } from '../types';
 import { Collection, Entry, EntryProps, KeyValueMap } from 'contentful-management';
 
 export default async function loadData(): Promise<string> {

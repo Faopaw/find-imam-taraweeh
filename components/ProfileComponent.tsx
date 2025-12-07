@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
-import { FaUserAlt, FaRegMap, FaGlobe, FaRegAddressCard } from "react-icons/fa";
+import { FaUserAlt, FaRegMap, FaRegAddressCard } from "react-icons/fa";
 import { GoVerified } from "react-icons/go";
 import { ProfileComponentProps } from "../types";
 

@@ -1,12 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom'
-import VacancyCard from "./VacancyCard";
-import Button from "react-bootstrap/Button";
+import { Button } from "./ui/button";
 
 describe("Testing modal", () => {
   test("Modal exists", () => {
     render(
-        <Button aria-label="detailsbutton" variant="primary" >
+        <Button aria-label="detailsbutton" variant="default" >
             More Details
           </Button>);
     const titleElement = screen.getByRole("button", {
