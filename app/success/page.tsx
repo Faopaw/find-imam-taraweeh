@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import classes from "../../src/styles/success.module.css";
 import { useWindowSize } from "@react-hook/window-size";
 import Image from "next/image";
 import heroImage from "../../public/undraw_astronaut_re_8c33.svg";
@@ -10,10 +9,10 @@ import { useRouter } from "next/navigation";
 
 export default function Success() {
    return (
-    <main className={classes.main}>
-      <div className={classes.dialogbox}>
-        <h1 className={classes.h1}>Vacancy Submitted Successfully!</h1>
-        <div className={classes.imagecontainer}>
+    <main className="flex flex-row items-center justify-center w-screen h-screen bg-background">
+      <div className="flex flex-col items-center justify-center text-center bg-card text-card-foreground w-full h-full min-w-[400px] p-8 px-16 rounded-[var(--radius)] border border-border sm:w-[60%] sm:h-auto">
+        <h1 className="text-foreground pb-8">Vacancy Submitted Successfully!</h1>
+        <div className="flex justify-center items-center overflow-hidden m-4 w-[300px] h-[300px] relative">
           <Image
             alt="Image of a happy astronaut waving a flag"
             src={heroImage}
@@ -22,7 +21,7 @@ export default function Success() {
             priority
           />
         </div>
-        <p className={classes.p}>
+        <p className="text-muted-foreground pb-8 text-xl">
           Your details have been submitted and will be processed by our approval
           team.
         </p>
@@ -30,7 +29,7 @@ export default function Success() {
           size="lg"
           variant="primary"
           href="/"
-          className={classes.buttonstyle}
+          className="bg-primary text-primary-foreground border-none p-2.4 w-full rounded-[var(--radius)] sm:w-[80%] sm:max-w-[500px]"
         >
           Go to Homepage
         </Button>

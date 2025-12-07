@@ -24,7 +24,7 @@ export interface ContentfulResponse {
 }
 
 // Form types
-export interface RegisterFormValues {
+export interface VacancyFormValues {
   contactName: string;
   contactNumber: string;
   masjid: string;

@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import uploadData from '../utils/uploadData';
-import { RegisterFormValues } from '../types';
+import { VacancyFormValues } from '../types';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -93,8 +93,8 @@ export default function VacancyForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Convert the form values to RegisterFormValues format
-    const formValues: RegisterFormValues = {
+    // Convert the form values to VacancyFormValues format
+    const formValues: VacancyFormValues = {
       contactName: values.contactName,
       contactNumber: values.contactNumber,
       masjid: values.masjid,
