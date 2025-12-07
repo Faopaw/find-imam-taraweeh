@@ -6,19 +6,7 @@
   /* height: 100vh; */
   width: 100vw;
   height: 100vh;
-  background: #9cecfb; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #0052d4,
-    #65c7f7,
-    #9cecfb
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    -45deg,
-    #0052d4,
-    #65c7f7,
-    #9cecfb
-  ); /*  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: hsl(var(--background));
 }
 
 .dialogbox {
@@ -27,41 +15,32 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #ffffff;
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
   width: 100%;
   height: 100%;
   min-width: 400px;
   padding: 2rem 4rem;
-  /* border-radius: 25px; */
-  /* border: 2px solid grey; */
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
 }
 
 .buttonstyle {
-  background: #9cecfb; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #0052d4,
-    #65c7f7,
-    #9cecfb
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    -45deg,
-    #0052d4,
-    #65c7f7,
-    #9cecfb
-  ); /*  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
   border: none;
   padding: 0.6rem;
   width: 100%;
+  border-radius: var(--radius);
 }
 
 .h1 {
-  color: slategray;
+  color: hsl(var(--foreground));
   padding-bottom: 2rem;
 }
 
 .p {
-  color: grey;
+  color: hsl(var(--muted-foreground));
   padding-bottom: 2rem;
   font-size: 20px;
 }
@@ -85,32 +64,23 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #ffffff;
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
     width: 60%;
     height: auto;
     min-width: 400px;
     padding: 2rem 4rem;
-    border-radius: 25px;
-    /* border: 2px solid grey; */
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
   }
 
   .buttonstyle {
-    background: #9cecfb; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      -45deg,
-      #0052d4,
-      #65c7f7,
-      #9cecfb
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      -45deg,
-      #0052d4,
-      #65c7f7,
-      #9cecfb
-    ); /*  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     border: none;
     padding: 0.6rem;
     width: 80%;
     max-width: 500px;
+    border-radius: var(--radius);
   }
 }
