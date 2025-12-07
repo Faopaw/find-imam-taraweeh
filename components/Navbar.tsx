@@ -18,13 +18,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -103,16 +96,13 @@ export default function MainNavbar() {
               >
                 Contact Us
               </Link>
-              <Button
-                variant="ghost"
-                onClick={() => {
-                  setShowMobileMenu(false);
-                  setShowFAQ(true);
-                }}
+              <Link
+                href="/faq"
                 className={cn(navigationMenuTriggerStyle(), "justify-start")}
+                onClick={() => setShowMobileMenu(false)}
               >
                 FAQ
-              </Button>
+              </Link>
             </div>
           </SheetContent>
         </Sheet>
