@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import Vacancies from "../components/Vacancies";
 import loadData from "../utils/loadData";
+import { Footer } from "../components/Footer";
 
 export default async function Home() {
   const res = await loadData();
@@ -12,6 +13,7 @@ export default async function Home() {
     <>
       <Hero />
       <Vacancies data={returnArray} />
+      <Footer />
     </>
   );
 }

@@ -111,7 +111,7 @@ export default function VacancyForm() {
   }
 
   return (
-    <div className='flex min-h-svh w-full items-center justify-center p-6 md:p-10'>
+    <div className='flex min-h-svh w-full justify-center md:p-10'>
       <div className='w-full max-w-3xl'>
         <Card>
           <div className='pt-2 pb-4'>
