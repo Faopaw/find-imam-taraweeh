@@ -11,6 +11,9 @@ export interface ContentfulFields {
   contactName: ContentfulField;
   contactMobileNumber: ContentfulField;
   details: ContentfulField;
+  sys: {
+    id: string;
+  };
 }
 
 export interface ContentfulEntry {

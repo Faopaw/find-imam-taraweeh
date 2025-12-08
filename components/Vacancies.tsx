@@ -3,8 +3,9 @@ import { VacanciesProps, ContentfulEntry } from "../types";
 
 function Vacancies(props: VacanciesProps) {
   const dataArray: ContentfulEntry[] = JSON.parse(JSON.parse(props.data));
-  const cards = dataArray.map((data, index) => (
-    <VacancyCard requireddata={data} key={index} />
+
+  const cards = dataArray.map((data) => (
+    <VacancyCard requireddata={data} key={data.sys.id} />
   ));
   return (
     <>
