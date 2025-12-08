@@ -38,8 +38,8 @@ export default function uploadData(values: VacancyFormValues): void {
           contactMobileNumber: {
             "en-US": `${values.contactNumber}`,
           },
-          extraDetails: {
-            "en-US": `${values.extraDetails}`,
+          details: {
+            "en-US": `${values.details}`,
           },
         },
       })

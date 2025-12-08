@@ -87,9 +87,9 @@ function VacancyCard(props: VacancyCardProps) {
               </p>
             </div>
             <div>
-              <strong className='text-sm font-semibold'>Extra Details:</strong>
+              <strong className='text-sm font-semibold'>Details:</strong>
               <p className='text-sm text-muted-foreground mt-1'>
-                {props.requireddata.fields.extraDetails?.['en-US']}
+                {props.requireddata.fields.details?.['en-US']}
               </p>
             </div>
           </div>

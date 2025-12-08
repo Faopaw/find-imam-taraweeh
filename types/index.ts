@@ -10,7 +10,7 @@ export interface ContentfulFields {
   requirements: ContentfulField;
   contactName: ContentfulField;
   contactMobileNumber: ContentfulField;
-  extraDetails: ContentfulField;
+  details: ContentfulField;
 }
 
 export interface ContentfulEntry {
@@ -31,7 +31,7 @@ export interface VacancyFormValues {
   city: string;
   address: string;
   requirements: string;
-  extraDetails: string;
+  details: string;
   terms: string | string[];
 }
 
