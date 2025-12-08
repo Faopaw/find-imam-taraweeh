@@ -9,7 +9,7 @@ import { FaTreeCity } from "react-icons/fa6";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa6";
 import { IconContext } from "react-icons";
-
+// This is the landing page for the app - unavailable for now
 export default function Landing() {
   return (
     <>
