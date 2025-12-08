@@ -27,42 +27,42 @@ function VacancyCard(props: VacancyCardProps) {
 
   return (
     <>
-      <Card className="w-full max-w-sm border-l-4 border-l-primary">
+      <Card className="w-full max-w-sm border-l-4 border-l-primary h-full">
         <CardHeader>
           <CardTitle className="text-lg">
-            {props.requireddata.fields.masjid["en-US"]},{" "}
-            {props.requireddata.fields.city["en-US"]}
+            {props.requireddata.fields.masjid["en-US"]}
           </CardTitle>
           <CardDescription>
-            {props.requireddata.fields.address?.["en-US"]}
+            {props.requireddata.fields.city["en-US"]}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <span className="text-sm text-muted-foreground">
-              {props.requireddata.fields.requirements?.["en-US"]}
+              {props.requireddata.fields.requirements?.["en-US"].substring(
+                0,
+                100
+              )}
+              ...
             </span>
-
-            <div className="flex items-center gap-2 text-sm mt-2">
-              <span className="font-medium">
-                {props.requireddata.fields.contactName?.["en-US"]}
-              </span>
-              <span className="text-muted-foreground">-</span>
-              <span className="text-muted-foreground">
-                <a
-                  href={`tel:${props.requireddata.fields.contactMobileNumber?.["en-US"]}`}
-                >
-                  {props.requireddata.fields.contactMobileNumber?.["en-US"]}
-                </a>
-              </span>
-            </div>
+            <address className="text-sm text-muted-foreground block pt-2">
+              {/* eg: 298 Park Road, Loughborough, LE11 2HL, Leicestershire becomes: https://www.google.com/maps/search/?api=1&query=298%20Park%20Road%2C%20Loughborough%2C%20LE11%202HL%2C%20Leicestershire */}
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.requireddata.fields.address?.["en-US"])}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 text-sm hover:text-blue-700 underline"
+              >
+                {props.requireddata.fields.address?.["en-US"]}
+              </a>
+            </address>
           </div>
         </CardContent>
         <CardFooter>
           <Button
             aria-label="detailsbutton"
             onClick={handleShow}
-            className="w-full"
+            className="w-full "
             variant="secondary"
           >
             More Details
