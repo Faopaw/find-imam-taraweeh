@@ -75,7 +75,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-primary-foreground/60 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Pretentious. All rights reserved.
+            &copy; {new Date().getFullYear()} Find Taraweeh Imam. All rights reserved.
           </p>
         </div>
       </div>
