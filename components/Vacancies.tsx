@@ -1,11 +1,11 @@
 import VacancyCard from "./VacancyCard";
-import { ContentfulFields, VacanciesProps } from "../types";
+import { VacanciesProps } from "../types";
 
-function Vacancies(props: VacanciesProps) {
-  const cards = props.data.map(({ fields, sys }) => {
+function Vacancies({ data }: VacanciesProps) {
+  const cards = data.map(({ fields, sys }) => {
     return (
       <VacancyCard
-        requireddata={{ fields: fields as ContentfulFields, sys }}
+        requireddata={{ fields, sys }}
         key={sys.id}
       />
     );

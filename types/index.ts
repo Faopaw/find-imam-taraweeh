@@ -1,11 +1,12 @@
-import { Entry } from "contentful-management";
-
-// Contentful types
 export interface ContentfulField {
-  'en-US': string;
+  "en-US": string;
 }
 
-export interface ContentfulFields {
+export interface ContentfulIntegerField {
+  "en-US": number;
+}
+
+export interface VacancyFields {
   masjid: ContentfulField;
   city: ContentfulField;
   address: ContentfulField;
@@ -13,13 +14,19 @@ export interface ContentfulFields {
   contactName: ContentfulField;
   contactMobileNumber: ContentfulField;
   details: ContentfulField;
-  sys: {
-    id: string;
-  };
+  slug?: ContentfulField;
+  numberOfImams?: ContentfulIntegerField;
+  country?: ContentfulField;
+  contact2Name?: ContentfulField;
+  contact2Number?: ContentfulField;
 }
 
 export interface ContentfulEntry {
-  fields: ContentfulFields;
+  fields: VacancyFields;
+  sys: {
+    id: string;
+    [key: string]: any;
+  };
   [key: string]: any;
 }
 
