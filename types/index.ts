@@ -1,24 +1,20 @@
-export interface ContentfulField {
-  "en-US": string;
-}
+import type { Entry } from "contentful";
 
-export interface ContentfulIntegerField {
-  "en-US": number;
-}
-
+// VacancyFields represents the resolved fields from Contentful Delivery API
+// The Delivery API automatically resolves fields, so they are strings/numbers directly
 export interface VacancyFields {
-  masjid: ContentfulField;
-  city: ContentfulField;
-  address: ContentfulField;
-  requirements: ContentfulField;
-  contactName: ContentfulField;
-  contactMobileNumber: ContentfulField;
-  details: ContentfulField;
-  slug?: ContentfulField;
-  numberOfImams?: ContentfulIntegerField;
-  country?: ContentfulField;
-  contact2Name?: ContentfulField;
-  contact2Number?: ContentfulField;
+  masjid: string;
+  city: string;
+  address: string;
+  requirements: string;
+  contactName: string;
+  contactMobileNumber: string;
+  details: string;
+  slug?: string;
+  numberOfImams?: number;
+  country?: string;
+  contact2Name?: string;
+  contact2Number?: string;
 }
 
 export interface ContentfulEntry {
@@ -27,11 +23,6 @@ export interface ContentfulEntry {
     id: string;
     [key: string]: any;
   };
-  [key: string]: any;
-}
-
-export interface ContentfulResponse {
-  items: ContentfulEntry[];
   [key: string]: any;
 }
 
@@ -49,11 +40,11 @@ export interface VacancyFormValues {
 
 // Component prop types
 export interface VacancyCardProps {
-  requireddata: ContentfulEntry;
+  requireddata: Entry<VacancyFields>;
 }
 
 export interface VacanciesProps {
-  data: ContentfulEntry[];
+  data: Entry<VacancyFields>[];
 }
 
 export interface ProfileComponentProps {

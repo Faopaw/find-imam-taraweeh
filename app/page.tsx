@@ -1,10 +1,13 @@
 import Hero from "../components/Hero";
 import Vacancies from "../components/Vacancies";
-import loadData from "../utils/loadData";
+import { getAllVacancies } from "@/lib/contentful/api";
 import { Footer } from "../components/Footer";
 
+// Enable static generation with ISR - regenerate every hour
+export const revalidate = 3600;
+
 export default async function Home() {
-  const res = await loadData();
+  const res = (await getAllVacancies());
 
   return (
     <>

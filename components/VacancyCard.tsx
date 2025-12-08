@@ -25,37 +25,39 @@ function VacancyCard(props: VacancyCardProps) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const masjid = props.requireddata.fields.masjid;
+  const city = props.requireddata.fields.city;
+  const requirements = props.requireddata.fields.requirements;
+  const address = props.requireddata.fields.address;
+  const details = props.requireddata.fields.details;
+
+
   return (
     <>
       <Card className="w-full max-w-sm border-l-4 border-l-primary h-full">
         <CardHeader>
-          <CardTitle className="text-lg">
-            {props.requireddata.fields.masjid["en-US"]}
-          </CardTitle>
-          <CardDescription>
-            {props.requireddata.fields.city["en-US"]}
-          </CardDescription>
+          <CardTitle className="text-lg">{masjid}</CardTitle>
+          <CardDescription>{city}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <span className="text-sm text-muted-foreground">
-              {props.requireddata.fields.requirements?.["en-US"].substring(
-                0,
-                100
-              )}
-              ...
-            </span>
-            <address className="text-sm text-muted-foreground block pt-2">
-              {/* eg: 298 Park Road, Loughborough, LE11 2HL, Leicestershire becomes: https://www.google.com/maps/search/?api=1&query=298%20Park%20Road%2C%20Loughborough%2C%20LE11%202HL%2C%20Leicestershire */}
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.requireddata.fields.address?.["en-US"])}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 text-sm hover:text-blue-700 underline"
-              >
-                {props.requireddata.fields.address?.["en-US"]}
-              </a>
-            </address>
+            {requirements && (
+              <span className="text-sm text-muted-foreground">
+                {requirements.substring(0, 100)}...
+              </span>
+            )}
+            {address && (
+              <address className="text-sm text-muted-foreground block pt-2">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 text-sm hover:text-blue-700 underline"
+                >
+                  {address}
+                </a>
+              </address>
+            )}
           </div>
         </CardContent>
         <CardFooter>
@@ -81,21 +83,15 @@ function VacancyCard(props: VacancyCardProps) {
           <div className="space-y-4 py-4">
             <div>
               <strong className="text-sm font-semibold">Masjid Name:</strong>
-              <p className="text-sm text-muted-foreground mt-1">
-                {props.requireddata.fields.masjid?.["en-US"]}
-              </p>
+              <p className="text-sm text-muted-foreground mt-1">{masjid}</p>
             </div>
             <div>
               <strong className="text-sm font-semibold">Address:</strong>
-              <p className="text-sm text-muted-foreground mt-1">
-                {props.requireddata.fields.address?.["en-US"]}
-              </p>
+              <p className="text-sm text-muted-foreground mt-1">{address}</p>
             </div>
             <div>
               <strong className="text-sm font-semibold">Details:</strong>
-              <p className="text-sm text-muted-foreground mt-1">
-                {props.requireddata.fields.details?.["en-US"]}
-              </p>
+              <p className="text-sm text-muted-foreground mt-1">{details}</p>
             </div>
           </div>
           <DialogFooter>

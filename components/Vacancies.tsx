@@ -1,14 +1,9 @@
 import VacancyCard from "./VacancyCard";
-import { VacanciesProps } from "../types";
+import { VacanciesProps } from "@/types";
 
-function Vacancies({ data }: VacanciesProps) {
-  const cards = data.map(({ fields, sys }) => {
-    return (
-      <VacancyCard
-        requireddata={{ fields, sys }}
-        key={sys.id}
-      />
-    );
+function Vacancies(props: VacanciesProps) {
+  const cards = props.data.map((entry) => {
+    return <VacancyCard requireddata={entry} key={entry.sys.id} />;
   });
   return (
     <>
