@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useRouter } from "next/navigation";
-import uploadData from "../utils/uploadData";
 import { VacancyFormValues } from "../types";
 import { Button } from "@/components/ui/button";
 import {
@@ -74,6 +73,8 @@ const formSchema = z.object({
 export default function VacancyForm() {
   const router = useRouter();
   const [termsDialogOpen, setTermsDialogOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -89,7 +90,7 @@ export default function VacancyForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Convert the form values to VacancyFormValues format
     const formValues: VacancyFormValues = {
       contactName: values.contactName,
@@ -102,9 +103,34 @@ export default function VacancyForm() {
       terms: values.terms ? "checked" : "",
     };
 
-    // Send the data to contentful, if successful go to success page and if not show error message
-    uploadData(formValues);
-    router.push("/success");
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Send the data to contentful via API route, if successful go to success page and if not show error message
+      const response = await fetch("/api/upload-vacancy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to submit vacancy");
+      }
+
+      router.push("/success");
+    } catch (error) {
+      console.error("Failed to submit vacancy:", error);
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Failed to submit vacancy. Please try again later."
+      );
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -338,8 +364,18 @@ export default function VacancyForm() {
 
                     <FieldGroup>
                       <Field>
-                        <Button type="submit" size="lg" className="w-full">
-                          Submit Vacancy
+                        {submitError && (
+                          <div className="mb-4 p-4 rounded-lg bg-red-50 border border-red-200">
+                            <p className="text-sm text-red-800">{submitError}</p>
+                          </div>
+                        )}
+                        <Button
+                          type="submit"
+                          size="lg"
+                          className="w-full"
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? "Submitting..." : "Submit Vacancy"}
                         </Button>
                       </Field>
                     </FieldGroup>
