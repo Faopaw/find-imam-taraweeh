@@ -3,7 +3,7 @@ import { VacancyFormValues } from "../types";
 
 export default async function uploadData(
   values: VacancyFormValues
-): Promise<void> {
+): Promise<string> {
   const accessToken = process.env.PERSONAL_ACCESS_TOKEN;
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const ENVIRONMENTID = "master"; // this can be in .env or here if you want to change on the fly
@@ -41,9 +41,13 @@ export default async function uploadData(
         details: {
           "en-US": `${values.details}`,
         },
+        pinCode: {
+          "en-US": `${values.pinCode}`,
+        },
       },
     });
     console.log("Entry created successfully:", entry);
+    return entry.sys.id;
   } catch (error) {
     console.error("Error uploading data:", error);
     throw error;

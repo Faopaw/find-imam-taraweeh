@@ -101,6 +101,7 @@ export default function VacancyForm() {
       requirements: values.requirements,
       details: values.details,
       terms: values.terms ? "checked" : "",
+      pinCode: Math.floor(1000 + Math.random() * 9000).toString(),
     };
 
     setIsSubmitting(true);
@@ -120,8 +121,9 @@ export default function VacancyForm() {
         const errorData = await response.json();
         throw new Error(errorData.error || "Failed to submit vacancy");
       }
+      const id = (await response.json()).id!;
 
-      router.push("/success");
+      router.push(`/success?pincode=${formValues.pinCode}&id=${id}`);
     } catch (error) {
       console.error("Failed to submit vacancy:", error);
       setSubmitError(
@@ -366,7 +368,9 @@ export default function VacancyForm() {
                       <Field>
                         {submitError && (
                           <div className="mb-4 p-4 rounded-lg bg-red-50 border border-red-200">
-                            <p className="text-sm text-red-800">{submitError}</p>
+                            <p className="text-sm text-red-800">
+                              {submitError}
+                            </p>
                           </div>
                         )}
                         <Button

@@ -59,7 +59,7 @@ export async function getVacancyBySlug(
       content_type: "requestType",
       "fields.slug": slug,
       include: 3,
-      limit: 2,
+      limit: 1,
     };
 
     const response = await client.getEntries<VacancyFields>(query);
@@ -100,19 +100,27 @@ export async function getVacancyById(
   if (!isContentfulConfigured()) {
     return null;
   }
+  // Return null if id is undefined, null, or empty string
+  if (!id) {
+    return null;
+  }
   try {
     const client = getClient(options);
-
     const query: Record<string, unknown> = {
       content_type: "requestType",
       "sys.id": id,
-      include: 3,
-      limit: 2,
+      include: 1,
+      limit: 1,
     };
-
+    
     const response = await client.getEntries<VacancyFields>(query);
 
-    return response.items[0] ?? null;
+    const item = response.items[0];
+    // Validate that the returned item's ID matches the requested ID
+    if (item && item.sys.id === id) {
+      return item;
+    }
+    return null;
   } catch (error) {
     console.error("[Contentful] Error fetching vacancy:", error);
     return null;

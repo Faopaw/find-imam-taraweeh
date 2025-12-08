@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { Button } from "./button";
 
 export default function ManageVacancyCard({
@@ -8,7 +9,14 @@ export default function ManageVacancyCard({
   item: any;
   index: number;
 }) {
+  const router = useRouter();
+  
   const onClickDelete = async (item: any, index: number) => {
+    const confirm = prompt("Are you sure you want to delete this vacancy?");
+    if (confirm !== item.fields.pinCode) {
+      alert("Incorrect pin code, please try again");
+      return;
+    }
     try {
       const response = await fetch("/api/remove-vacancy", {
         method: "DELETE",
@@ -24,10 +32,12 @@ export default function ManageVacancyCard({
       }
 
       // Refresh the page to show updated list
-      window.location.reload();
+      router.push("/");
     } catch (error) {
       console.error("Error deleting vacancy:", error);
-      alert(error instanceof Error ? error.message : "Failed to delete vacancy");
+      alert(
+        error instanceof Error ? error.message : "Failed to delete vacancy"
+      );
     }
   };
   return (
@@ -35,8 +45,8 @@ export default function ManageVacancyCard({
       key={index}
       className="flex flex-col gap-2 border border-gray-300 rounded-lg p-4 shadow-md max-w-sm"
     >
-      <h2>{item.fields.masjid?.["en-US"]}</h2>
-      <p>{item.fields.city?.["en-US"]}</p>
+      <h2>{item.fields.masjid}</h2>
+      <p>{item.fields.city}</p>
 
       <Button variant="outline" onClick={() => onClickDelete(item, index)}>
         Delete Vacancy

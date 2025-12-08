@@ -36,6 +36,7 @@ export interface VacancyFormValues {
   requirements: string;
   details: string;
   terms: string | string[];
+  pinCode: string;
 }
 
 // Component prop types

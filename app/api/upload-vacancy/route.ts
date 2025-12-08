@@ -22,10 +22,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    await uploadData(body);
+    const id = await uploadData(body);
 
     return NextResponse.json(
-      { message: "Vacancy submitted successfully" },
+      { message: "Vacancy submitted successfully", id: id },
       { status: 200 }
     );
   } catch (error) {
