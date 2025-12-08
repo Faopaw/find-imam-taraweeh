@@ -1,3 +1,5 @@
+import { Entry } from "contentful-management";
+
 // Contentful types
 export interface ContentfulField {
   'en-US': string;
@@ -44,7 +46,7 @@ export interface VacancyCardProps {
 }
 
 export interface VacanciesProps {
-  data: string;
+  data: ContentfulEntry[];
 }
 
 export interface ProfileComponentProps {

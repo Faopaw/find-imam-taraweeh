@@ -1,12 +1,15 @@
 import VacancyCard from "./VacancyCard";
-import { VacanciesProps, ContentfulEntry } from "../types";
+import { ContentfulFields, VacanciesProps } from "../types";
 
 function Vacancies(props: VacanciesProps) {
-  const dataArray: ContentfulEntry[] = JSON.parse(JSON.parse(props.data));
-
-  const cards = dataArray.map((data) => (
-    <VacancyCard requireddata={data} key={data.sys.id} />
-  ));
+  const cards = props.data.map(({ fields, sys }) => {
+    return (
+      <VacancyCard
+        requireddata={{ fields: fields as ContentfulFields, sys }}
+        key={sys.id}
+      />
+    );
+  });
   return (
     <>
       <section className="m-8 grid items-center justify-center grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-2.5 gap-y-8 sm:py-8 sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-3">

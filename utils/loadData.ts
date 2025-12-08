@@ -1,25 +1,33 @@
-import * as contentfulManagement from 'contentful-management';
-import { Collection, Entry, EntryProps, KeyValueMap } from 'contentful-management';
+import * as contentfulManagement from "contentful-management";
+import {
+  Collection,
+  Entry,
+  EntryProps,
+  KeyValueMap,
+} from "contentful-management";
 
-export default async function loadData(): Promise<string> {
+export default async function loadData(): Promise<Entry[]> {
   const client = contentfulManagement.createClient({
     accessToken: process.env.PERSONAL_ACCESS_TOKEN as string,
   });
 
-  let returnArray: any[];
-
+  let returnObject: Entry[];
+  
   try {
     const space = await client.getSpace(
       process.env.CONTENTFUL_SPACE_ID as string
     );
-    const environment = await space.getEnvironment('master');
-    const response: Collection<Entry, EntryProps<KeyValueMap>> =
-      await environment.getPublishedEntries();
-    returnArray = response.items;
+    const environment = await space.getEnvironment("master");
+    const response: Collection<
+      Entry,
+      EntryProps<KeyValueMap>
+    > = await environment.getPublishedEntries();
+    returnObject = response.items;
+
   } catch (error) {
     console.error(error);
-    returnArray = [];
+    returnObject = [];
   }
 
-  return JSON.stringify(returnArray);
+  return returnObject;
 }
