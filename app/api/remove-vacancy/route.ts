@@ -4,10 +4,14 @@ import { NextRequest, NextResponse } from "next/server";
 export async function DELETE(request: NextRequest) {
   try {
     const body = await request.json();
-    const { id } = body;
+    const { id, pinCode } = body;
 
     if (!id) {
       return NextResponse.json({ error: "ID is required" }, { status: 400 });
+    }
+
+    if (!pinCode) {
+      return NextResponse.json({ error: "Pin code is required" }, { status: 400 });
     }
 
     await deleteVacancy(id);

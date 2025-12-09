@@ -44,10 +44,7 @@ const formSchema = z.object({
     .string()
     .max(20, "Name must be 20 characters or less.")
     .min(1, "Field cannot be empty"),
-  contactNumber: z
-    .string()
-    .max(20, "Phone number must be 20 characters or less.")
-    .min(1, "Field cannot be empty"),
+  contactNumber: z.e164("Invalid phone number"),
   masjid: z
     .string()
     .max(20, "String must be 20 characters or less.")
@@ -91,6 +88,11 @@ export default function VacancyForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    const parsed = formSchema.safeParse(values);
+    if (!parsed.success) {
+      setSubmitError(parsed.error.message);
+      return;
+    }
     // Convert the form values to VacancyFormValues format
     const formValues: VacancyFormValues = {
       contactName: values.contactName,
