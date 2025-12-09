@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 const faq = [
   {
@@ -27,7 +27,6 @@ export default function FAQ() {
       <div className="flex min-h-svh w-full justify-center md:p-10">
         <div className="w-full max-w-3xl">
           <Card>
-            <CardHeader></CardHeader>
             <CardContent>
               <div className="my-4 grid grid-cols-1 gap-6">
                 {faq.map((item) => (

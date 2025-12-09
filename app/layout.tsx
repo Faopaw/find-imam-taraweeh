@@ -3,6 +3,7 @@ import React from "react";
 import MainNavbar from "../components/Navbar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Metadata } from "next";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Find an Imam - Taraweeh",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
           <MainNavbar />
           {children}
+          <Footer />
       </body>
     </html>
   );

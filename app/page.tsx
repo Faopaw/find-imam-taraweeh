@@ -1,7 +1,6 @@
 import Hero from "../components/Hero";
 import Vacancies from "../components/Vacancies";
 import { getAllVacancies } from "@/lib/contentful/api";
-import { Footer } from "../components/Footer";
 
 // Enable static generation with ISR - regenerate every hour
 export const revalidate = 3600;
@@ -16,7 +15,6 @@ export default async function Home() {
         description="Use the information below to see all of the current Taraweeh vacancies nationwide"
       />
       <Vacancies data={res} />
-      <Footer />
     </>
   );
 }
