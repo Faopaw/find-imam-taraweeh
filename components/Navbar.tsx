@@ -76,7 +76,7 @@ export default function MainNavbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
-              <SheetTitle>Navigation</SheetTitle>
+              <SheetTitle>Menu</SheetTitle>
               <SheetDescription>
                 Navigate through the application
               </SheetDescription>

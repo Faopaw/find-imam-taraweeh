@@ -10,8 +10,8 @@ import { Mail } from "lucide-react";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gray-50 sm:py-4 ">
-      <div className="flex min-h-svh w-full justify-center md:p-10">
+    <div className="bg-gray-50 sm:py-4 ">
+      <div className="flex w-full justify-center md:p-10">
         <div className="w-full max-w-3xl">
           <Card>
             <div className="p-6">

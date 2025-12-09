@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { siInstagram, siX, siYoutube } from "simple-icons";
 
 export function Footer() {
   return (

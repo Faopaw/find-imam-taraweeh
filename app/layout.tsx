@@ -7,7 +7,8 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Find an Imam - Taraweeh",
-  description: "List vacancies for Imams and Huffadh to find places to lead Taraweeh prayers",
+  description:
+    "List vacancies for Imams and Huffadh to find places to lead Taraweeh prayers",
 };
 
 export default function RootLayout({
@@ -17,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-          <MainNavbar />
-          {children}
-          <Footer />
+      <body className="flex flex-col min-h-screen">
+        <MainNavbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

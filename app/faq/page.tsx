@@ -24,7 +24,7 @@ export default function FAQ() {
   return (
     <>
       <Hero title="FAQ" description="Frequently asked questions" />
-      <div className="flex min-h-svh w-full justify-center md:p-10">
+      <div className="flex w-full justify-center md:p-10">
         <div className="w-full max-w-3xl">
           <Card>
             <CardContent>
