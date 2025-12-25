@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import uploadData from "../../../utils/uploadData";
+import uploadDataNeon from "../../../utils/uploadDataNeon";
 import { VacancyFormValues } from "../../../types";
 
 export async function POST(request: NextRequest) {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const id = await uploadData(body);
+    const id = await uploadDataNeon(body);
 
     return NextResponse.json(
       { message: "Vacancy submitted successfully", id: id },

@@ -110,7 +110,7 @@ export default function VacancyForm() {
     setSubmitError(null);
 
     try {
-      // Send the data to contentful via API route, if successful go to success page and if not show error message
+      // Send the data to Neon via API route, if successful go to success page and if not show error message
       const response = await fetch("/api/upload-vacancy", {
         method: "POST",
         headers: {
