@@ -1,5 +1,6 @@
 "use client";
 
+import DOMPurify from "dompurify";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -94,14 +95,14 @@ export default function VacancyForm() {
       return;
     }
     // Convert the form values to VacancyFormValues format
-    const formValues: VacancyFormValues = {
-      contactName: values.contactName,
-      contactNumber: values.contactNumber,
-      masjid: values.masjid,
-      city: values.city,
-      address: values.address,
-      requirements: values.requirements,
-      details: values.details,
+    const sanitizedformValues: VacancyFormValues = {
+      contactName: DOMPurify.sanitize(values.contactName),
+      contactNumber: DOMPurify.sanitize(values.contactNumber),
+      masjid: DOMPurify.sanitize(values.masjid),
+      city: DOMPurify.sanitize(values.city),
+      address: DOMPurify.sanitize(values.address),
+      requirements: DOMPurify.sanitize(values.requirements),
+      details: DOMPurify.sanitize(values.details),
       terms: values.terms ? "checked" : "",
       pinCode: Math.floor(1000 + Math.random() * 9000).toString(),
     };
@@ -116,7 +117,7 @@ export default function VacancyForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: JSON.stringify(sanitizedformValues),
       });
 
       if (!response.ok) {
@@ -125,7 +126,7 @@ export default function VacancyForm() {
       }
       const id = (await response.json()).id!;
 
-      router.push(`/success?pincode=${formValues.pinCode}&id=${id}`);
+      router.push(`/success?pincode=${sanitizedformValues.pinCode}&id=${id}`);
     } catch (error) {
       console.error("Failed to submit vacancy:", error);
       setSubmitError(
