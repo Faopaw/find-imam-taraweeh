@@ -1,4 +1,5 @@
-import { getVacancyById, getVacancyIds } from "@/lib/contentful/api";
+// import { getVacancyById, getVacancyIds } from "@/lib/contentful/api";
+// TODO : import vacancies by ID from Neon DB
 import { Suspense } from "react";
 import ManageVacancyCard from "@/components/ui/manage-vacancy-card";
 import {
