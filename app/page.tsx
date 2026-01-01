@@ -1,12 +1,12 @@
 import Hero from "../components/Hero";
 import Vacancies from "../components/Vacancies";
-import { getAllVacancies } from "@/lib/contentful/api";
+import {fetchAllData , fetchDataById} from '../utils/fetchDataNeon'
 
 // Enable static generation with ISR - regenerate every hour
 export const revalidate = 3600;
 
 export default async function Home() {
-  const res = (await getAllVacancies());
+  const res = await fetchAllData("vacancies");
 
   return (
     <>

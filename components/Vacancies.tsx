@@ -3,7 +3,7 @@ import { VacanciesProps } from "@/types";
 
 function Vacancies(props: VacanciesProps) {
   const cards = props.data.map((entry) => {
-    return <VacancyCard requireddata={entry} key={entry.sys.id} />;
+    return <VacancyCard requireddata={entry} key={entry.id} />;
   });
   return (
     <>

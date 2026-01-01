@@ -25,12 +25,7 @@ function VacancyCard(props: VacancyCardProps) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const masjid = props.requireddata.fields.masjid;
-  const city = props.requireddata.fields.city;
-  const requirements = props.requireddata.fields.requirements;
-  const address = props.requireddata.fields.address;
-  const details = props.requireddata.fields.details;
-
+  const { masjid, city, requirements, address, details } = props.requireddata;
 
   return (
     <>
