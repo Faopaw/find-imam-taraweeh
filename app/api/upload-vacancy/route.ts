@@ -1,20 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
-import uploadData from "../../../utils/uploadData";
+import uploadDataNeon from "../../../utils/uploadDataNeon";
 import { VacancyFormValues } from "../../../types";
+import sanitizeHtml from "sanitize-html";
 
 export async function POST(request: NextRequest) {
   try {
     const body: VacancyFormValues = await request.json();
 
+    // Sanitize input data
+    const sanitizedData = {
+      contactName: sanitizeHtml(body.contactName),
+      contactNumber: sanitizeHtml(body.contactNumber),
+      masjid: sanitizeHtml(body.masjid),
+      city: sanitizeHtml(body.city),
+      address: sanitizeHtml(body.address),
+      requirements: sanitizeHtml(body.requirements),
+      details: sanitizeHtml(body.details),
+      terms: sanitizeHtml(body.terms!.toString()), // Convert boolean to string
+      pinCode: body.pinCode,
+    };
+
     // Validate required fields
     if (
-      !body.contactName ||
-      !body.contactNumber ||
-      !body.masjid ||
-      !body.city ||
-      !body.address ||
-      !body.requirements ||
-      !body.details
+      !sanitizedData.contactName ||
+      !sanitizedData.contactNumber ||
+      !sanitizedData.masjid ||
+      !sanitizedData.city ||
+      !sanitizedData.address ||
+      !sanitizedData.requirements ||
+      !sanitizedData.details
     ) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -22,7 +36,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const id = await uploadData(body);
+    const id = await uploadDataNeon(sanitizedData);
 
     return NextResponse.json(
       { message: "Vacancy submitted successfully", id: id },

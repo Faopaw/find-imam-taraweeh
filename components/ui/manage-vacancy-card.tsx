@@ -45,8 +45,8 @@ export default function ManageVacancyCard({
       key={index}
       className="flex flex-col gap-2 border border-gray-300 rounded-lg p-4 shadow-md max-w-sm"
     >
-      <h2>{item.fields.masjid}</h2>
-      <p>{item.fields.city}</p>
+      <h2>{item.masjid}</h2>
+      <p>{item.city}</p>
 
       <Button variant="outline" onClick={() => onClickDelete(item, index)}>
         Delete Vacancy

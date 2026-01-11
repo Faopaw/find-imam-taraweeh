@@ -17,6 +17,20 @@ export interface VacancyFields {
   contact2Number?: string;
 }
 
+// VacancyFields represents the structure of a row in the Neon database
+export interface Vacancy {
+  id: number;
+  contact_name: string;
+  contact_number: string;
+  masjid: string;
+  city: string;
+  address: string;
+  requirements: string;
+  details: string;
+  pin_code: string;
+  created_at: string; // ISO string for timestamps
+}
+
 export interface ContentfulEntry {
   fields: VacancyFields;
   sys: {
@@ -41,11 +55,11 @@ export interface VacancyFormValues {
 
 // Component prop types
 export interface VacancyCardProps {
-  requireddata: Entry<VacancyFields>;
+  requireddata: Vacancy;
 }
 
 export interface VacanciesProps {
-  data: Entry<VacancyFields>[];
+  data: Vacancy[];
 }
 
 export interface ProfileComponentProps {
